@@ -1,0 +1,13 @@
+.gallery {
+    flex-wrap:nowrap !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.gallery > div {
+    height: 350px;
+}
+
+.gallery > div > img {
+    border-radius: 1.3rem!important;
+}
