@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import styles from "./home.module.css"
-import Tabs from "../utilityComponent/tabs/Tabs";
-import Gallery from "../utilityComponent/gallery/Gallery";
+import Tabs from "../../component/utilityComponent/tabs/Tabs";
+import Gallery from "../../component/utilityComponent/gallery/Gallery"
 import { connect } from "react-redux";
 
 class Home extends React.PureComponent {

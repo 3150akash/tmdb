@@ -4,9 +4,9 @@
     overflow-y: hidden;
 }
 
-.gallery > div {
+/* .gallery > div {
     height: 350px;
-}
+} */
 
 .gallery > div > img {
     border-radius: 1.3rem!important;
