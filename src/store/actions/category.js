@@ -42,13 +42,16 @@ export const setCategoryDataSortOrder = (sortOrder) => {
     }
 }
 
-export const fetchCategoryData = (mastercategory, subCategory) => {
-    return (dispatch) => {
+export const fetchCategoryData = (mastercategory, subCategory, pageNumber) => {
+    return (dispatch, getState) => {
         dispatch(setCategoryInfo(mastercategory, subCategory))
-        const url = `${mastercategory}/${subCategory}?api_key=${process.env.REACT_APP_API_ID}&language=en-US&page=1`;
+        const url = `${mastercategory}/${subCategory}?api_key=${process.env.REACT_APP_API_ID}&language=en-US&page=${pageNumber || 1}`;
         dispatch(getCategoryDataStart())
-        axios.get(url).then(respose => {
-            dispatch(getCategoryDataSuccess(respose.data))
+        axios.get(url).then(response => {
+            const state = getState()
+            const oldData = (state.category.data.results) ? state.category.data.results : []
+            response.data.results = [...oldData, ...response.data.results]
+            dispatch(getCategoryDataSuccess(response.data))
         }).catch(err => {
             dispatch(getCategoryDataFailed())
         })
