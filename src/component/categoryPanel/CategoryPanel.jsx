@@ -7,7 +7,7 @@ const CategoryPanel = ({ data }) => {
             {
                 (data && data.length > 0)
                     ? data.map(currentItem => {
-                        return <MovieCard size="large" currentItem={currentItem} />
+                        return <MovieCard key={currentItem.id} size="large" currentItem={currentItem} />
                     })
                     : <Spinner style={{
                         width: "5rem",

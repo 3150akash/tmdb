@@ -12,15 +12,22 @@ const Category = (props) => {
     const [pageNumber, setPageNumber] = useState(1)
     useEffect(() => {
         props.getData(masterCategory, subCategory, pageNumber)
-        return () => disableWindowsScroll(onCategoryScroll)
     }, [props.sortOrder, props.filter, pageNumber])
 
     const onCategoryScroll = (ev) => {
+        console.log(pageNumber)
         _handleScroll(ev, () => {
-            setPageNumber(pageNumber + 1)
+            setPageNumber(updatePage)
         })
     }
+    const updatePage = (pageNumber) => {
+        return pageNumber + 1
+    }
     window.onscroll = onCategoryScroll;
+    useEffect(() => {        
+        return () => disableWindowsScroll(onCategoryScroll)
+    }, [])
+
     return (
         <Fragment>
             <Heading masterCategory={masterCategory} subCategory={subCategory} ></Heading>
