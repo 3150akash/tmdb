@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Alert } from 'reactstrap';
+// import { Alert } from 'reactstrap';
 
 export default class ErrorBounderies extends Component {
     state = {
@@ -16,7 +16,7 @@ export default class ErrorBounderies extends Component {
 
     render() {
         return this.state.gotError ? (
-            <Alert color="danger">Some Error Has Occured...</Alert>
+            <div color="danger">Some Error Has Occured...</div>
         ) : (this.props.children)
     }
 }

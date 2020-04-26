@@ -1,44 +1,34 @@
 import React from "react"
-import { Nav, NavItem, NavLink, Badge, Button } from 'react-bootstrap';
 import { connect } from "react-redux";
 import * as actions from "../../../store/actions"
 import styles from "./tabs.module.css"
+import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+import FormLabel from '@material-ui/core/FormLabel';
+
 class Tabs extends React.Component {
     componentDidMount() {
-        this.props.getCategoryData(this.props.masterCategory, this.props.tabItems[0].val) 
+        this.props.getCategoryData(this.props.masterCategory, this.props.tabItems[0].val)
     }
-    navigationNode = (currentItem) => (
-        <NavLink className={styles.navigation} href="#" onClick={() => { this.props.getCategoryData(this.props.masterCategory, currentItem.val) }}>
-            <h5>{currentItem.displayVal}</h5>
-        </NavLink>
+    navigationNode = (currentItem, active) => (
+        <Button variant={active ? "contained" : "outlined"} size="large" component="div" href="#" onClick={() => { this.props.getCategoryData(this.props.masterCategory, currentItem.val) }}>
+            {currentItem.displayVal}
+        </Button>
     )
     render() {
         return (
             <div className="mt-2 container-fluid">
                 <div className="row">
-                    <div className="col-2">
-                        <h3>{this.props.title}</h3>
-                    </div>
-
-                    <div className="row border rounded">
-                        <Nav>
-                            {
-                                this.props.tabItems && this.props.tabItems.map(currentItem => {
-                                    return (
-                                        <NavItem key={currentItem.val} className="col-4 p-0">
-                                            {currentItem.val === this.props.selectedCategory
-                                                ? <Badge className="p-0">
-                                                    {this.navigationNode(currentItem)}
-                                                </Badge>
-                                                : this.navigationNode(currentItem)
-                                            }
-
-                                        </NavItem>
-                                    )
-                                })
-                            }
-                        </Nav>
-                    </div>
+                    <FormLabel className={styles.buttonTitle}>
+                        <h4>{this.props.title}</h4>
+                    </FormLabel>
+                    <ButtonGroup color="primary" aria-label="contained primary button group">
+                        {
+                            this.props.tabItems && this.props.tabItems.map(currentItem => {
+                                return this.navigationNode(currentItem, currentItem.val === this.props.selectedCategory)
+                            })
+                        }
+                    </ButtonGroup>
                 </div>
             </div>
         )

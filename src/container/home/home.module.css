@@ -2,8 +2,7 @@
     background: url("https://image.tmdb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/ghQrKrcEpAlkzBuNoOCSxHQXWqw.jpg");
     background-position:center;
 	background-repeat:no-repeat;
-	background-size:cover;
-    height:calc(100vh / 2.5);    
+	background-size:cover; 
     color:white;
 }
 

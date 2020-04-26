@@ -45,7 +45,7 @@ export const setCategoryDataSortOrder = (sortOrder) => {
 export const fetchCategoryData = (mastercategory, subCategory, pageNumber) => {
     return (dispatch, getState) => {
         dispatch(setCategoryInfo(mastercategory, subCategory))
-        const url = `${mastercategory}/${subCategory}?api_key=${process.env.REACT_APP_API_ID}&language=en-US&page=${pageNumber || 1}`;
+        const url = `discover/${mastercategory}?api_key=${process.env.REACT_APP_API_ID}&sort_by=popularity.desc&include_adult=true&include_video=false&page=${pageNumber || 1}`;
         dispatch(getCategoryDataStart())
         axios.get(url).then(response => {
             const state = getState()

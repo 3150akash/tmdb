@@ -6,6 +6,7 @@ import Footer from './component/footer/Footer';
 import { store } from "./store/index"
 import { Provider } from "react-redux"
 import { BrowserRouter } from 'react-router-dom';
+import "./App.css"
 
 function App() {
   let maincontainer = (

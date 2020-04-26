@@ -1,15 +1,16 @@
 import React from "react"
-import { Spinner } from "reactstrap"
+// import { Spinner } from "reactstrap"
+import Grid from '@material-ui/core/Grid';
 import MovieCard from "../utilityComponent/movieCard/MovieCard"
 const CategoryPanel = ({ data }) => {
     return (
-        <div className="row Panel panel-body mb-5 p-0 col-md-9" style={{ minHeight: "70vh" }}>
+        <Grid justify={'space-between'} container md={9}>
             {
                 (data && data.length > 0)
                     ? data.map(currentItem => {
                         return <MovieCard key={currentItem.id} size="large" currentItem={currentItem} />
                     })
-                    : <Spinner style={{
+                    : <div style={{
                         width: "5rem",
                         height: "5rem",
                         position: "absolute",
@@ -17,7 +18,7 @@ const CategoryPanel = ({ data }) => {
                         top: "40%",
                     }} color="primary" />
             }
-        </div>
+        </Grid>
     )
 }
 

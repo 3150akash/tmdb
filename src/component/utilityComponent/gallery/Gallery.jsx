@@ -1,7 +1,7 @@
 import React from "react"
-import {
-    Card, Spinner
-} from 'reactstrap';
+// import {
+//     Card, Spinner
+// } from 'reactstrap';
 import styles from "./gallery.module.css"
 import Moviecard from "../movieCard/MovieCard";
 
@@ -18,9 +18,9 @@ class Gallery extends React.PureComponent {
                             )
                         })
                             : (
-                                <Card className="col-2 p-0 mr-5 border border-0" style={{ left: "50%", paddingTop: "100px !important" }}>
-                                    <Spinner style={{ width: '5rem', height: '5rem' }} color="primary" />
-                                </Card>
+                                <div className="col-2 p-0 mr-5 border border-0" style={{ left: "50%", paddingTop: "100px !important" }}>
+                                    <div style={{ width: '5rem', height: '5rem' }} color="primary" />
+                                </div>
                             )
                     }
                 </div>
