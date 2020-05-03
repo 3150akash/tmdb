@@ -11,17 +11,15 @@ const Heading = (props) => {
         paper: {
             padding: theme.spacing(2),
             textAlign: 'center',
-            width  :"100%",
+            width: "100%",
             color: theme.palette.text.secondary,
-            textAlign:"left",
+            textAlign: "left",
             textTransform: "capitalize"
         },
     }));
     const classes = useStyles();
     return (
-        <Grid container lg={12}>
-            <Paper elevation={3} className={classes.paper}>{`${props.masterCategory} ${props.subCategory}`}</Paper>
-        </Grid>
+        <Paper elevation={3} className={classes.paper}>{`${props.masterCategory} ${props.subCategory}`}</Paper>
     )
 }
 export default Heading

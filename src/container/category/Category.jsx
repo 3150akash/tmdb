@@ -19,35 +19,47 @@ const Category = (props) => {
     const masterCategory = props.match.params.masterCategory || "Movies"
     const subCategory = props.match.params.subcategory || "popular"
 
-    const [pageNumber, setPageNumber] = useState(1)
     useEffect(() => {
-        props.getData(masterCategory, subCategory, pageNumber)
-    }, [props.sortOrder, props.filter, pageNumber])
+        props.getData(masterCategory, subCategory, props.pageNumber, props.sortOrder)
+    }, [props.sortOrder, props.filter, props.pageNumber])
 
     const onCategoryScroll = (ev) => {
-        console.log(pageNumber)
         _handleScroll(ev, () => {
-            setPageNumber(updatePage)
+            props.setPageNumber(props.pageNumber + 1)
         })
-    }
-    const updatePage = (pageNumber) => {
-        return pageNumber + 1
     }
     window.onscroll = onCategoryScroll;
     useEffect(() => {
         return () => disableWindowsScroll(onCategoryScroll)
     }, [])
 
+    const applySorting = (sortOrder) => {
+        props.setPageNumber(1);
+        props.setSortOrder(sortOrder)
+    }
+
     return (
         <Fragment>
-            <Heading masterCategory={masterCategory} subCategory={subCategory} ></Heading>
-            <div style={{marginTop:"12px"}}>
-                <Grid container lg={12}>
-                    <SortAndSearch />
-                    <CategoryPanel data={props.categoryData} />
+            <div className="col-12" style={{ paddingLeft: "0", paddingRight: "0", position: "sticky", top: "64px", zIndex:"100" }}>
+                <Grid container>
+                    <Heading masterCategory={masterCategory} subCategory={subCategory} ></Heading>
                 </Grid>
             </div>
-        </Fragment>
+            <div style={{ marginTop: "12px" }}>
+                <Grid justify={'space-between'} container lg={12}>
+                    <div className="col-3" style={{ paddingLeft: "0", paddingRight: "0" }}>
+                        <Grid style={{ paddingRight: "5px", top: "132px" }}>
+                            <SortAndSearch sortOrder={props.sortOrder} filter={props.filter} setSortOrder={applySorting} />
+                        </Grid>
+                    </div>
+                    <div className="col-9" style={{ paddingLeft: "0", paddingRight: "0" }}>
+                        <Grid justify={'space-between'} container>
+                            <CategoryPanel data={props.categoryData} />
+                        </Grid>
+                    </div>
+                </Grid>
+            </div>
+        </Fragment >
     )
 }
 
@@ -55,13 +67,16 @@ const mapStateToProps = (state) => {
     return {
         categoryData: state.category.data.results,
         sortOrder: state.category.sortOrder,
-        filter: state.category.filter
+        filter: state.category.filter,
+        pageNumber: state.category.currentpage
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getData: (mastercategory, subCategory, pageNumber) => dispatch(actions.fetchCategoryData(mastercategory, subCategory, pageNumber))
+        getData: (mastercategory, subCategory, pageNumber, sortOrder) => dispatch(actions.fetchCategoryData(mastercategory, subCategory, pageNumber, sortOrder)),
+        setSortOrder: (sortOrder) => dispatch(actions.setCategoryDataSortOrder(sortOrder)),
+        setPageNumber: (pageNumber) => dispatch(actions.setPageNumber(pageNumber))
     }
 }
 

@@ -41,15 +41,23 @@ export const setCategoryDataSortOrder = (sortOrder) => {
         sortOrder: sortOrder
     }
 }
+export const setPageNumber = (currentpage) => {
+    return {
+        type: actionTypes.SET_CATEGORY_DATA_PAGE_NUMBER,
+        currentpage: currentpage
+    }
+}
 
-export const fetchCategoryData = (mastercategory, subCategory, pageNumber) => {
+// export const applySortAndSearch =()
+
+export const fetchCategoryData = (mastercategory, subCategory, pageNumber, sortOrder) => {
     return (dispatch, getState) => {
         dispatch(setCategoryInfo(mastercategory, subCategory))
-        const url = `discover/${mastercategory}?api_key=${process.env.REACT_APP_API_ID}&sort_by=popularity.desc&include_adult=true&include_video=false&page=${pageNumber || 1}`;
+        const url = `discover/${mastercategory}?api_key=${process.env.REACT_APP_API_ID}&sort_by=${(sortOrder !== "" ? sortOrder : "popularity.desc")}&include_adult=false&include_video=false&page=${pageNumber || 1}`;
         dispatch(getCategoryDataStart())
         axios.get(url).then(response => {
             const state = getState()
-            const oldData = (state.category.data.results) ? state.category.data.results : []
+            const oldData = (state.category.data.results && pageNumber !== 1) ? state.category.data.results : []
             response.data.results = [...oldData, ...response.data.results]
             dispatch(getCategoryDataSuccess(response.data))
         }).catch(err => {

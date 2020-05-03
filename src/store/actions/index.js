@@ -1,2 +1,2 @@
 export { fetchData } from "./home"
-export { fetchCategoryData, setCategoryDataFilter, setCategoryDataSortOrder } from "./category"
+export { fetchCategoryData, setCategoryDataFilter, setCategoryDataSortOrder, setPageNumber } from "./category"

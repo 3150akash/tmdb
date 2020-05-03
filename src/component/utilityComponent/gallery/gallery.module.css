@@ -8,6 +8,11 @@
     height: 350px;
 } */
 
+.backdrop{
+    z-Index: 1000;
+    color: '#fff';
+}
+
 .gallery > div > img {
     border-radius: 1.3rem!important;
 }

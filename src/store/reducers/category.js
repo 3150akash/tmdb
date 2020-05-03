@@ -7,7 +7,8 @@ const initialState = {
     subCategory: "",
     data: {},
     filter: {},
-    sortOrder: ""
+    sortOrder: "",
+    currentpage: 1
 }
 
 const reducer = (state = initialState, action) => {
@@ -19,7 +20,11 @@ const reducer = (state = initialState, action) => {
             }
         case actiontype.SET_CATEGORY_DATA_SORT_ORDER:
             {
-                return updateobject(state, action.sortOrder)
+                return updateobject(state, { sortOrder: action.sortOrder })
+            }
+        case actiontype.SET_CATEGORY_DATA_PAGE_NUMBER:
+            {
+                return updateobject(state, { currentpage: action.currentpage })
             }
         case actiontype.GET_CATEGORY_DATA_FAIL:
             {

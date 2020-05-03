@@ -1,12 +1,10 @@
 import React from "react"
-// import {
-//     Card, Spinner
-// } from 'reactstrap';
+import Backdrop from '@material-ui/core/Backdrop';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import styles from "./gallery.module.css"
 import Moviecard from "../movieCard/MovieCard";
 
 class Gallery extends React.PureComponent {
-
     render() {
         return (
             <div className="mt-2 container-fluid" >
@@ -16,12 +14,7 @@ class Gallery extends React.PureComponent {
                             return (
                                 <Moviecard currentItem={currentItem} />
                             )
-                        })
-                            : (
-                                <div className="col-2 p-0 mr-5 border border-0" style={{ left: "50%", paddingTop: "100px !important" }}>
-                                    <div style={{ width: '5rem', height: '5rem' }} color="primary" />
-                                </div>
-                            )
+                        }) : <CircularProgress style={{position:"absolute", left:"45%"}} color="primary" />
                     }
                 </div>
             </div>
