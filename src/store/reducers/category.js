@@ -6,7 +6,17 @@ const initialState = {
     masterCategory: "",
     subCategory: "",
     data: {},
-    filter: {},
+    filter: {
+        genres: [28],
+        certifiactes: [6, 9],
+        searchAll: false,
+        primary_release_date_lt: new Date().toISOString().slice(0, 10),
+        primary_release_date_gt: new Date().toISOString().slice(0, 10),
+        language: "ka",
+        userScore: [0, 10],
+        minUserVotes: [0],
+        runTime: [0, 360]
+    },
     sortOrder: "",
     currentpage: 1
 }
@@ -15,8 +25,7 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actiontype.SET_CATEGORY_DATA_FILTER:
             {
-                return updateobject(state, action.filter)
-
+                return updateobject(state, action.payload)
             }
         case actiontype.SET_CATEGORY_DATA_SORT_ORDER:
             {

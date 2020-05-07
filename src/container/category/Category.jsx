@@ -40,7 +40,7 @@ const Category = (props) => {
 
     return (
         <Fragment>
-            <div className="col-12" style={{ paddingLeft: "0", paddingRight: "0", position: "sticky", top: "64px", zIndex:"100" }}>
+            <div className="col-12" style={{ paddingLeft: "0", paddingRight: "0", position: "sticky", top: "64px", zIndex: "100" }}>
                 <Grid container>
                     <Heading masterCategory={masterCategory} subCategory={subCategory} ></Heading>
                 </Grid>
@@ -49,7 +49,7 @@ const Category = (props) => {
                 <Grid justify={'space-between'} container lg={12}>
                     <div className="col-3" style={{ paddingLeft: "0", paddingRight: "0" }}>
                         <Grid style={{ paddingRight: "5px", top: "132px" }}>
-                            <SortAndSearch sortOrder={props.sortOrder} filter={props.filter} setSortOrder={applySorting} />
+                            <SortAndSearch setFilter={props.setFilter} filter={props.filter} sortOrder={props.sortOrder} filter={props.filter} setSortOrder={applySorting} />
                         </Grid>
                     </div>
                     <div className="col-9" style={{ paddingLeft: "0", paddingRight: "0" }}>
@@ -76,7 +76,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         getData: (mastercategory, subCategory, pageNumber, sortOrder) => dispatch(actions.fetchCategoryData(mastercategory, subCategory, pageNumber, sortOrder)),
         setSortOrder: (sortOrder) => dispatch(actions.setCategoryDataSortOrder(sortOrder)),
-        setPageNumber: (pageNumber) => dispatch(actions.setPageNumber(pageNumber))
+        setPageNumber: (pageNumber) => dispatch(actions.setPageNumber(pageNumber)),
+        setFilter: (filterObj) => dispatch(actions.setCategoryDataFilter(filterObj))
     }
 }
 

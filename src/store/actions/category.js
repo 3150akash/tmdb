@@ -31,7 +31,7 @@ const setCategoryInfo = (masterCategory, subCategory) => {
 export const setCategoryDataFilter = (filter) => {
     return {
         type: actionTypes.SET_CATEGORY_DATA_FILTER,
-        filter: filter
+        payload: { filter: filter }
     }
 }
 

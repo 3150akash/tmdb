@@ -1,937 +1,937 @@
 const languages = [
     {
-        "iso_639_1": "xx",
-        "english_name": "No Language",
+        value: "xx",
+        key: "No Language",
         "name": "No Language"
     },
     {
-        "iso_639_1": "aa",
-        "english_name": "Afar",
+        value: "aa",
+        key: "Afar",
         "name": ""
     },
     {
-        "iso_639_1": "af",
-        "english_name": "Afrikaans",
+        value: "af",
+        key: "Afrikaans",
         "name": "Afrikaans"
     },
     {
-        "iso_639_1": "ak",
-        "english_name": "Akan",
+        value: "ak",
+        key: "Akan",
         "name": ""
     },
     {
-        "iso_639_1": "an",
-        "english_name": "Aragonese",
+        value: "an",
+        key: "Aragonese",
         "name": ""
     },
     {
-        "iso_639_1": "as",
-        "english_name": "Assamese",
+        value: "as",
+        key: "Assamese",
         "name": ""
     },
     {
-        "iso_639_1": "av",
-        "english_name": "Avaric",
+        value: "av",
+        key: "Avaric",
         "name": ""
     },
     {
-        "iso_639_1": "ae",
-        "english_name": "Avestan",
+        value: "ae",
+        key: "Avestan",
         "name": ""
     },
     {
-        "iso_639_1": "ay",
-        "english_name": "Aymara",
+        value: "ay",
+        key: "Aymara",
         "name": ""
     },
     {
-        "iso_639_1": "az",
-        "english_name": "Azerbaijani",
+        value: "az",
+        key: "Azerbaijani",
         "name": "Azərbaycan"
     },
     {
-        "iso_639_1": "ba",
-        "english_name": "Bashkir",
+        value: "ba",
+        key: "Bashkir",
         "name": ""
     },
     {
-        "iso_639_1": "bm",
-        "english_name": "Bambara",
+        value: "bm",
+        key: "Bambara",
         "name": "Bamanankan"
     },
     {
-        "iso_639_1": "bi",
-        "english_name": "Bislama",
+        value: "bi",
+        key: "Bislama",
         "name": ""
     },
     {
-        "iso_639_1": "bo",
-        "english_name": "Tibetan",
+        value: "bo",
+        key: "Tibetan",
         "name": ""
     },
     {
-        "iso_639_1": "br",
-        "english_name": "Breton",
+        value: "br",
+        key: "Breton",
         "name": ""
     },
     {
-        "iso_639_1": "ca",
-        "english_name": "Catalan",
+        value: "ca",
+        key: "Catalan",
         "name": "Català"
     },
     {
-        "iso_639_1": "cs",
-        "english_name": "Czech",
+        value: "cs",
+        key: "Czech",
         "name": "Český"
     },
     {
-        "iso_639_1": "ce",
-        "english_name": "Chechen",
+        value: "ce",
+        key: "Chechen",
         "name": ""
     },
     {
-        "iso_639_1": "cu",
-        "english_name": "Slavic",
+        value: "cu",
+        key: "Slavic",
         "name": ""
     },
     {
-        "iso_639_1": "cv",
-        "english_name": "Chuvash",
+        value: "cv",
+        key: "Chuvash",
         "name": ""
     },
     {
-        "iso_639_1": "kw",
-        "english_name": "Cornish",
+        value: "kw",
+        key: "Cornish",
         "name": ""
     },
     {
-        "iso_639_1": "co",
-        "english_name": "Corsican",
+        value: "co",
+        key: "Corsican",
         "name": ""
     },
     {
-        "iso_639_1": "cr",
-        "english_name": "Cree",
+        value: "cr",
+        key: "Cree",
         "name": ""
     },
     {
-        "iso_639_1": "cy",
-        "english_name": "Welsh",
+        value: "cy",
+        key: "Welsh",
         "name": "Cymraeg"
     },
     {
-        "iso_639_1": "da",
-        "english_name": "Danish",
+        value: "da",
+        key: "Danish",
         "name": "Dansk"
     },
     {
-        "iso_639_1": "de",
-        "english_name": "German",
+        value: "de",
+        key: "German",
         "name": "Deutsch"
     },
     {
-        "iso_639_1": "dv",
-        "english_name": "Divehi",
+        value: "dv",
+        key: "Divehi",
         "name": ""
     },
     {
-        "iso_639_1": "dz",
-        "english_name": "Dzongkha",
+        value: "dz",
+        key: "Dzongkha",
         "name": ""
     },
     {
-        "iso_639_1": "eo",
-        "english_name": "Esperanto",
+        value: "eo",
+        key: "Esperanto",
         "name": "Esperanto"
     },
     {
-        "iso_639_1": "et",
-        "english_name": "Estonian",
+        value: "et",
+        key: "Estonian",
         "name": "Eesti"
     },
     {
-        "iso_639_1": "eu",
-        "english_name": "Basque",
+        value: "eu",
+        key: "Basque",
         "name": "euskera"
     },
     {
-        "iso_639_1": "fo",
-        "english_name": "Faroese",
+        value: "fo",
+        key: "Faroese",
         "name": ""
     },
     {
-        "iso_639_1": "fj",
-        "english_name": "Fijian",
+        value: "fj",
+        key: "Fijian",
         "name": ""
     },
     {
-        "iso_639_1": "fi",
-        "english_name": "Finnish",
+        value: "fi",
+        key: "Finnish",
         "name": "suomi"
     },
     {
-        "iso_639_1": "fr",
-        "english_name": "French",
+        value: "fr",
+        key: "French",
         "name": "Français"
     },
     {
-        "iso_639_1": "fy",
-        "english_name": "Frisian",
+        value: "fy",
+        key: "Frisian",
         "name": ""
     },
     {
-        "iso_639_1": "ff",
-        "english_name": "Fulah",
+        value: "ff",
+        key: "Fulah",
         "name": "Fulfulde"
     },
     {
-        "iso_639_1": "gd",
-        "english_name": "Gaelic",
+        value: "gd",
+        key: "Gaelic",
         "name": ""
     },
     {
-        "iso_639_1": "ga",
-        "english_name": "Irish",
+        value: "ga",
+        key: "Irish",
         "name": "Gaeilge"
     },
     {
-        "iso_639_1": "gl",
-        "english_name": "Galician",
+        value: "gl",
+        key: "Galician",
         "name": "Galego"
     },
     {
-        "iso_639_1": "gv",
-        "english_name": "Manx",
+        value: "gv",
+        key: "Manx",
         "name": ""
     },
     {
-        "iso_639_1": "gn",
-        "english_name": "Guarani",
+        value: "gn",
+        key: "Guarani",
         "name": ""
     },
     {
-        "iso_639_1": "gu",
-        "english_name": "Gujarati",
+        value: "gu",
+        key: "Gujarati",
         "name": ""
     },
     {
-        "iso_639_1": "ht",
-        "english_name": "Haitian; Haitian Creole",
+        value: "ht",
+        key: "Haitian; Haitian Creole",
         "name": ""
     },
     {
-        "iso_639_1": "ha",
-        "english_name": "Hausa",
+        value: "ha",
+        key: "Hausa",
         "name": "Hausa"
     },
     {
-        "iso_639_1": "sh",
-        "english_name": "Serbo-Croatian",
+        value: "sh",
+        key: "Serbo-Croatian",
         "name": ""
     },
     {
-        "iso_639_1": "hz",
-        "english_name": "Herero",
+        value: "hz",
+        key: "Herero",
         "name": ""
     },
     {
-        "iso_639_1": "ho",
-        "english_name": "Hiri Motu",
+        value: "ho",
+        key: "Hiri Motu",
         "name": ""
     },
     {
-        "iso_639_1": "hr",
-        "english_name": "Croatian",
+        value: "hr",
+        key: "Croatian",
         "name": "Hrvatski"
     },
     {
-        "iso_639_1": "hu",
-        "english_name": "Hungarian",
+        value: "hu",
+        key: "Hungarian",
         "name": "Magyar"
     },
     {
-        "iso_639_1": "ig",
-        "english_name": "Igbo",
+        value: "ig",
+        key: "Igbo",
         "name": ""
     },
     {
-        "iso_639_1": "io",
-        "english_name": "Ido",
+        value: "io",
+        key: "Ido",
         "name": ""
     },
     {
-        "iso_639_1": "ii",
-        "english_name": "Yi",
+        value: "ii",
+        key: "Yi",
         "name": ""
     },
     {
-        "iso_639_1": "iu",
-        "english_name": "Inuktitut",
+        value: "iu",
+        key: "Inuktitut",
         "name": ""
     },
     {
-        "iso_639_1": "ie",
-        "english_name": "Interlingue",
+        value: "ie",
+        key: "Interlingue",
         "name": ""
     },
     {
-        "iso_639_1": "ia",
-        "english_name": "Interlingua",
+        value: "ia",
+        key: "Interlingua",
         "name": ""
     },
     {
-        "iso_639_1": "id",
-        "english_name": "Indonesian",
+        value: "id",
+        key: "Indonesian",
         "name": "Bahasa indonesia"
     },
     {
-        "iso_639_1": "ik",
-        "english_name": "Inupiaq",
+        value: "ik",
+        key: "Inupiaq",
         "name": ""
     },
     {
-        "iso_639_1": "is",
-        "english_name": "Icelandic",
+        value: "is",
+        key: "Icelandic",
         "name": "Íslenska"
     },
     {
-        "iso_639_1": "it",
-        "english_name": "Italian",
+        value: "it",
+        key: "Italian",
         "name": "Italiano"
     },
     {
-        "iso_639_1": "jv",
-        "english_name": "Javanese",
+        value: "jv",
+        key: "Javanese",
         "name": ""
     },
     {
-        "iso_639_1": "ja",
-        "english_name": "Japanese",
+        value: "ja",
+        key: "Japanese",
         "name": "日本語"
     },
     {
-        "iso_639_1": "kl",
-        "english_name": "Kalaallisut",
+        value: "kl",
+        key: "Kalaallisut",
         "name": ""
     },
     {
-        "iso_639_1": "kn",
-        "english_name": "Kannada",
+        value: "kn",
+        key: "Kannada",
         "name": "?????"
     },
     {
-        "iso_639_1": "ks",
-        "english_name": "Kashmiri",
+        value: "ks",
+        key: "Kashmiri",
         "name": ""
     },
     {
-        "iso_639_1": "kr",
-        "english_name": "Kanuri",
+        value: "kr",
+        key: "Kanuri",
         "name": ""
     },
     {
-        "iso_639_1": "kk",
-        "english_name": "Kazakh",
+        value: "kk",
+        key: "Kazakh",
         "name": "қазақ"
     },
     {
-        "iso_639_1": "km",
-        "english_name": "Khmer",
+        value: "km",
+        key: "Khmer",
         "name": ""
     },
     {
-        "iso_639_1": "ki",
-        "english_name": "Kikuyu",
+        value: "ki",
+        key: "Kikuyu",
         "name": ""
     },
     {
-        "iso_639_1": "rw",
-        "english_name": "Kinyarwanda",
+        value: "rw",
+        key: "Kinyarwanda",
         "name": "Kinyarwanda"
     },
     {
-        "iso_639_1": "ky",
-        "english_name": "Kirghiz",
+        value: "ky",
+        key: "Kirghiz",
         "name": "??????"
     },
     {
-        "iso_639_1": "kv",
-        "english_name": "Komi",
+        value: "kv",
+        key: "Komi",
         "name": ""
     },
     {
-        "iso_639_1": "kg",
-        "english_name": "Kongo",
+        value: "kg",
+        key: "Kongo",
         "name": ""
     },
     {
-        "iso_639_1": "ko",
-        "english_name": "Korean",
+        value: "ko",
+        key: "Korean",
         "name": "한국어/조선말"
     },
     {
-        "iso_639_1": "kj",
-        "english_name": "Kuanyama",
+        value: "kj",
+        key: "Kuanyama",
         "name": ""
     },
     {
-        "iso_639_1": "ku",
-        "english_name": "Kurdish",
+        value: "ku",
+        key: "Kurdish",
         "name": ""
     },
     {
-        "iso_639_1": "lo",
-        "english_name": "Lao",
+        value: "lo",
+        key: "Lao",
         "name": ""
     },
     {
-        "iso_639_1": "la",
-        "english_name": "Latin",
+        value: "la",
+        key: "Latin",
         "name": "Latin"
     },
     {
-        "iso_639_1": "lv",
-        "english_name": "Latvian",
+        value: "lv",
+        key: "Latvian",
         "name": "Latviešu"
     },
     {
-        "iso_639_1": "li",
-        "english_name": "Limburgish",
+        value: "li",
+        key: "Limburgish",
         "name": ""
     },
     {
-        "iso_639_1": "ln",
-        "english_name": "Lingala",
+        value: "ln",
+        key: "Lingala",
         "name": ""
     },
     {
-        "iso_639_1": "lt",
-        "english_name": "Lithuanian",
+        value: "lt",
+        key: "Lithuanian",
         "name": "Lietuvių"
     },
     {
-        "iso_639_1": "lb",
-        "english_name": "Letzeburgesch",
+        value: "lb",
+        key: "Letzeburgesch",
         "name": ""
     },
     {
-        "iso_639_1": "lu",
-        "english_name": "Luba-Katanga",
+        value: "lu",
+        key: "Luba-Katanga",
         "name": ""
     },
     {
-        "iso_639_1": "lg",
-        "english_name": "Ganda",
+        value: "lg",
+        key: "Ganda",
         "name": ""
     },
     {
-        "iso_639_1": "mh",
-        "english_name": "Marshall",
+        value: "mh",
+        key: "Marshall",
         "name": ""
     },
     {
-        "iso_639_1": "ml",
-        "english_name": "Malayalam",
+        value: "ml",
+        key: "Malayalam",
         "name": ""
     },
     {
-        "iso_639_1": "mr",
-        "english_name": "Marathi",
+        value: "mr",
+        key: "Marathi",
         "name": ""
     },
     {
-        "iso_639_1": "mg",
-        "english_name": "Malagasy",
+        value: "mg",
+        key: "Malagasy",
         "name": ""
     },
     {
-        "iso_639_1": "mt",
-        "english_name": "Maltese",
+        value: "mt",
+        key: "Maltese",
         "name": "Malti"
     },
     {
-        "iso_639_1": "mo",
-        "english_name": "Moldavian",
+        value: "mo",
+        key: "Moldavian",
         "name": ""
     },
     {
-        "iso_639_1": "mn",
-        "english_name": "Mongolian",
+        value: "mn",
+        key: "Mongolian",
         "name": ""
     },
     {
-        "iso_639_1": "mi",
-        "english_name": "Maori",
+        value: "mi",
+        key: "Maori",
         "name": ""
     },
     {
-        "iso_639_1": "ms",
-        "english_name": "Malay",
+        value: "ms",
+        key: "Malay",
         "name": "Bahasa melayu"
     },
     {
-        "iso_639_1": "my",
-        "english_name": "Burmese",
+        value: "my",
+        key: "Burmese",
         "name": ""
     },
     {
-        "iso_639_1": "na",
-        "english_name": "Nauru",
+        value: "na",
+        key: "Nauru",
         "name": ""
     },
     {
-        "iso_639_1": "nv",
-        "english_name": "Navajo",
+        value: "nv",
+        key: "Navajo",
         "name": ""
     },
     {
-        "iso_639_1": "nr",
-        "english_name": "Ndebele",
+        value: "nr",
+        key: "Ndebele",
         "name": ""
     },
     {
-        "iso_639_1": "nd",
-        "english_name": "Ndebele",
+        value: "nd",
+        key: "Ndebele",
         "name": ""
     },
     {
-        "iso_639_1": "ng",
-        "english_name": "Ndonga",
+        value: "ng",
+        key: "Ndonga",
         "name": ""
     },
     {
-        "iso_639_1": "ne",
-        "english_name": "Nepali",
+        value: "ne",
+        key: "Nepali",
         "name": ""
     },
     {
-        "iso_639_1": "nl",
-        "english_name": "Dutch",
+        value: "nl",
+        key: "Dutch",
         "name": "Nederlands"
     },
     {
-        "iso_639_1": "nn",
-        "english_name": "Norwegian Nynorsk",
+        value: "nn",
+        key: "Norwegian Nynorsk",
         "name": ""
     },
     {
-        "iso_639_1": "nb",
-        "english_name": "Norwegian Bokmål",
+        value: "nb",
+        key: "Norwegian Bokmål",
         "name": "Bokmål"
     },
     {
-        "iso_639_1": "no",
-        "english_name": "Norwegian",
+        value: "no",
+        key: "Norwegian",
         "name": "Norsk"
     },
     {
-        "iso_639_1": "ny",
-        "english_name": "Chichewa; Nyanja",
+        value: "ny",
+        key: "Chichewa; Nyanja",
         "name": ""
     },
     {
-        "iso_639_1": "oc",
-        "english_name": "Occitan",
+        value: "oc",
+        key: "Occitan",
         "name": ""
     },
     {
-        "iso_639_1": "oj",
-        "english_name": "Ojibwa",
+        value: "oj",
+        key: "Ojibwa",
         "name": ""
     },
     {
-        "iso_639_1": "or",
-        "english_name": "Oriya",
+        value: "or",
+        key: "Oriya",
         "name": ""
     },
     {
-        "iso_639_1": "om",
-        "english_name": "Oromo",
+        value: "om",
+        key: "Oromo",
         "name": ""
     },
     {
-        "iso_639_1": "os",
-        "english_name": "Ossetian; Ossetic",
+        value: "os",
+        key: "Ossetian; Ossetic",
         "name": ""
     },
     {
-        "iso_639_1": "pi",
-        "english_name": "Pali",
+        value: "pi",
+        key: "Pali",
         "name": ""
     },
     {
-        "iso_639_1": "pl",
-        "english_name": "Polish",
+        value: "pl",
+        key: "Polish",
         "name": "Polski"
     },
     {
-        "iso_639_1": "pt",
-        "english_name": "Portuguese",
+        value: "pt",
+        key: "Portuguese",
         "name": "Português"
     },
     {
-        "iso_639_1": "qu",
-        "english_name": "Quechua",
+        value: "qu",
+        key: "Quechua",
         "name": ""
     },
     {
-        "iso_639_1": "rm",
-        "english_name": "Raeto-Romance",
+        value: "rm",
+        key: "Raeto-Romance",
         "name": ""
     },
     {
-        "iso_639_1": "ro",
-        "english_name": "Romanian",
+        value: "ro",
+        key: "Romanian",
         "name": "Română"
     },
     {
-        "iso_639_1": "rn",
-        "english_name": "Rundi",
+        value: "rn",
+        key: "Rundi",
         "name": "Kirundi"
     },
     {
-        "iso_639_1": "ru",
-        "english_name": "Russian",
+        value: "ru",
+        key: "Russian",
         "name": "Pусский"
     },
     {
-        "iso_639_1": "sg",
-        "english_name": "Sango",
+        value: "sg",
+        key: "Sango",
         "name": ""
     },
     {
-        "iso_639_1": "sa",
-        "english_name": "Sanskrit",
+        value: "sa",
+        key: "Sanskrit",
         "name": ""
     },
     {
-        "iso_639_1": "si",
-        "english_name": "Sinhalese",
+        value: "si",
+        key: "Sinhalese",
         "name": "සිංහල"
     },
     {
-        "iso_639_1": "sk",
-        "english_name": "Slovak",
+        value: "sk",
+        key: "Slovak",
         "name": "Slovenčina"
     },
     {
-        "iso_639_1": "sl",
-        "english_name": "Slovenian",
+        value: "sl",
+        key: "Slovenian",
         "name": "Slovenščina"
     },
     {
-        "iso_639_1": "se",
-        "english_name": "Northern Sami",
+        value: "se",
+        key: "Northern Sami",
         "name": ""
     },
     {
-        "iso_639_1": "sm",
-        "english_name": "Samoan",
+        value: "sm",
+        key: "Samoan",
         "name": ""
     },
     {
-        "iso_639_1": "sn",
-        "english_name": "Shona",
+        value: "sn",
+        key: "Shona",
         "name": ""
     },
     {
-        "iso_639_1": "sd",
-        "english_name": "Sindhi",
+        value: "sd",
+        key: "Sindhi",
         "name": ""
     },
     {
-        "iso_639_1": "so",
-        "english_name": "Somali",
+        value: "so",
+        key: "Somali",
         "name": "Somali"
     },
     {
-        "iso_639_1": "st",
-        "english_name": "Sotho",
+        value: "st",
+        key: "Sotho",
         "name": ""
     },
     {
-        "iso_639_1": "es",
-        "english_name": "Spanish",
+        value: "es",
+        key: "Spanish",
         "name": "Español"
     },
     {
-        "iso_639_1": "sq",
-        "english_name": "Albanian",
+        value: "sq",
+        key: "Albanian",
         "name": "shqip"
     },
     {
-        "iso_639_1": "sc",
-        "english_name": "Sardinian",
+        value: "sc",
+        key: "Sardinian",
         "name": ""
     },
     {
-        "iso_639_1": "sr",
-        "english_name": "Serbian",
+        value: "sr",
+        key: "Serbian",
         "name": "Srpski"
     },
     {
-        "iso_639_1": "ss",
-        "english_name": "Swati",
+        value: "ss",
+        key: "Swati",
         "name": ""
     },
     {
-        "iso_639_1": "su",
-        "english_name": "Sundanese",
+        value: "su",
+        key: "Sundanese",
         "name": ""
     },
     {
-        "iso_639_1": "sw",
-        "english_name": "Swahili",
+        value: "sw",
+        key: "Swahili",
         "name": "Kiswahili"
     },
     {
-        "iso_639_1": "sv",
-        "english_name": "Swedish",
+        value: "sv",
+        key: "Swedish",
         "name": "svenska"
     },
     {
-        "iso_639_1": "ty",
-        "english_name": "Tahitian",
+        value: "ty",
+        key: "Tahitian",
         "name": ""
     },
     {
-        "iso_639_1": "ta",
-        "english_name": "Tamil",
+        value: "ta",
+        key: "Tamil",
         "name": "தமிழ்"
     },
     {
-        "iso_639_1": "tt",
-        "english_name": "Tatar",
+        value: "tt",
+        key: "Tatar",
         "name": ""
     },
     {
-        "iso_639_1": "te",
-        "english_name": "Telugu",
+        value: "te",
+        key: "Telugu",
         "name": "తెలుగు"
     },
     {
-        "iso_639_1": "tg",
-        "english_name": "Tajik",
+        value: "tg",
+        key: "Tajik",
         "name": ""
     },
     {
-        "iso_639_1": "tl",
-        "english_name": "Tagalog",
+        value: "tl",
+        key: "Tagalog",
         "name": ""
     },
     {
-        "iso_639_1": "th",
-        "english_name": "Thai",
+        value: "th",
+        key: "Thai",
         "name": "ภาษาไทย"
     },
     {
-        "iso_639_1": "ti",
-        "english_name": "Tigrinya",
+        value: "ti",
+        key: "Tigrinya",
         "name": ""
     },
     {
-        "iso_639_1": "to",
-        "english_name": "Tonga",
+        value: "to",
+        key: "Tonga",
         "name": ""
     },
     {
-        "iso_639_1": "tn",
-        "english_name": "Tswana",
+        value: "tn",
+        key: "Tswana",
         "name": ""
     },
     {
-        "iso_639_1": "ts",
-        "english_name": "Tsonga",
+        value: "ts",
+        key: "Tsonga",
         "name": ""
     },
     {
-        "iso_639_1": "tk",
-        "english_name": "Turkmen",
+        value: "tk",
+        key: "Turkmen",
         "name": ""
     },
     {
-        "iso_639_1": "tr",
-        "english_name": "Turkish",
+        value: "tr",
+        key: "Turkish",
         "name": "Türkçe"
     },
     {
-        "iso_639_1": "tw",
-        "english_name": "Twi",
+        value: "tw",
+        key: "Twi",
         "name": ""
     },
     {
-        "iso_639_1": "ug",
-        "english_name": "Uighur",
+        value: "ug",
+        key: "Uighur",
         "name": ""
     },
     {
-        "iso_639_1": "uk",
-        "english_name": "Ukrainian",
+        value: "uk",
+        key: "Ukrainian",
         "name": "Український"
     },
     {
-        "iso_639_1": "ur",
-        "english_name": "Urdu",
+        value: "ur",
+        key: "Urdu",
         "name": "اردو"
     },
     {
-        "iso_639_1": "uz",
-        "english_name": "Uzbek",
+        value: "uz",
+        key: "Uzbek",
         "name": "ozbek"
     },
     {
-        "iso_639_1": "ve",
-        "english_name": "Venda",
+        value: "ve",
+        key: "Venda",
         "name": ""
     },
     {
-        "iso_639_1": "vi",
-        "english_name": "Vietnamese",
+        value: "vi",
+        key: "Vietnamese",
         "name": "Tiếng Việt"
     },
     {
-        "iso_639_1": "vo",
-        "english_name": "Volapük",
+        value: "vo",
+        key: "Volapük",
         "name": ""
     },
     {
-        "iso_639_1": "wa",
-        "english_name": "Walloon",
+        value: "wa",
+        key: "Walloon",
         "name": ""
     },
     {
-        "iso_639_1": "wo",
-        "english_name": "Wolof",
+        value: "wo",
+        key: "Wolof",
         "name": "Wolof"
     },
     {
-        "iso_639_1": "xh",
-        "english_name": "Xhosa",
+        value: "xh",
+        key: "Xhosa",
         "name": ""
     },
     {
-        "iso_639_1": "yi",
-        "english_name": "Yiddish",
+        value: "yi",
+        key: "Yiddish",
         "name": ""
     },
     {
-        "iso_639_1": "za",
-        "english_name": "Zhuang",
+        value: "za",
+        key: "Zhuang",
         "name": ""
     },
     {
-        "iso_639_1": "zu",
-        "english_name": "Zulu",
+        value: "zu",
+        key: "Zulu",
         "name": "isiZulu"
     },
     {
-        "iso_639_1": "ab",
-        "english_name": "Abkhazian",
+        value: "ab",
+        key: "Abkhazian",
         "name": ""
     },
     {
-        "iso_639_1": "zh",
-        "english_name": "Mandarin",
+        value: "zh",
+        key: "Mandarin",
         "name": "普通话"
     },
     {
-        "iso_639_1": "ps",
-        "english_name": "Pushto",
+        value: "ps",
+        key: "Pushto",
         "name": "پښتو"
     },
     {
-        "iso_639_1": "am",
-        "english_name": "Amharic",
+        value: "am",
+        key: "Amharic",
         "name": ""
     },
     {
-        "iso_639_1": "ar",
-        "english_name": "Arabic",
+        value: "ar",
+        key: "Arabic",
         "name": "العربية"
     },
     {
-        "iso_639_1": "bg",
-        "english_name": "Bulgarian",
+        value: "bg",
+        key: "Bulgarian",
         "name": "български език"
     },
     {
-        "iso_639_1": "cn",
-        "english_name": "Cantonese",
+        value: "cn",
+        key: "Cantonese",
         "name": "广州话 / 廣州話"
     },
     {
-        "iso_639_1": "mk",
-        "english_name": "Macedonian",
+        value: "mk",
+        key: "Macedonian",
         "name": ""
     },
     {
-        "iso_639_1": "el",
-        "english_name": "Greek",
+        value: "el",
+        key: "Greek",
         "name": "ελληνικά"
     },
     {
-        "iso_639_1": "fa",
-        "english_name": "Persian",
+        value: "fa",
+        key: "Persian",
         "name": "فارسی"
     },
     {
-        "iso_639_1": "he",
-        "english_name": "Hebrew",
+        value: "he",
+        key: "Hebrew",
         "name": "עִבְרִית"
     },
     {
-        "iso_639_1": "hi",
-        "english_name": "Hindi",
+        value: "hi",
+        key: "Hindi",
         "name": "हिन्दी"
     },
     {
-        "iso_639_1": "hy",
-        "english_name": "Armenian",
+        value: "hy",
+        key: "Armenian",
         "name": ""
     },
     {
-        "iso_639_1": "en",
-        "english_name": "English",
+        value: "en",
+        key: "English",
         "name": "English"
     },
     {
-        "iso_639_1": "ee",
-        "english_name": "Ewe",
+        value: "ee",
+        key: "Ewe",
         "name": "Èʋegbe"
     },
     {
-        "iso_639_1": "ka",
-        "english_name": "Georgian",
+        value: "ka",
+        key: "Georgian",
         "name": "ქართული"
     },
     {
-        "iso_639_1": "pa",
-        "english_name": "Punjabi",
+        value: "pa",
+        key: "Punjabi",
         "name": "ਪੰਜਾਬੀ"
     },
     {
-        "iso_639_1": "bn",
-        "english_name": "Bengali",
+        value: "bn",
+        key: "Bengali",
         "name": "বাংলা"
     },
     {
-        "iso_639_1": "bs",
-        "english_name": "Bosnian",
+        value: "bs",
+        key: "Bosnian",
         "name": "Bosanski"
     },
     {
-        "iso_639_1": "ch",
-        "english_name": "Chamorro",
+        value: "ch",
+        key: "Chamorro",
         "name": "Finu' Chamorro"
     },
     {
-        "iso_639_1": "be",
-        "english_name": "Belarusian",
+        value: "be",
+        key: "Belarusian",
         "name": "беларуская мова"
     },
     {
-        "iso_639_1": "yo",
-        "english_name": "Yoruba",
+        value: "yo",
+        key: "Yoruba",
         "name": "Èdè Yorùbá"
     }
 ]
