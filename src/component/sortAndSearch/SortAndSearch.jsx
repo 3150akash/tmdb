@@ -186,9 +186,9 @@ const SortAndSearch = (props) => {
                         { value: 120, label: 120 },
                         { value: 240, label: 240 },
                         { value: 360, label: 360 }]} label="Run Time" />
-                    <Divider />
+                    {/* <Divider />
                     <p></p>
-                    <Button color="primary" variant="outlined" onclick={props.search}>Search</Button>
+                    <Button color="primary" variant="outlined" onclick={props.search}>Search</Button> */}
                 </FormControl>
             </CollapsePanel>
         </>

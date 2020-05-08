@@ -49,7 +49,9 @@ const Category = (props) => {
                 <Grid justify={'space-between'} container lg={12}>
                     <div className="col-3" style={{ paddingLeft: "0", paddingRight: "0" }}>
                         <Grid style={{ paddingRight: "5px", top: "132px" }}>
-                            <SortAndSearch setFilter={props.setFilter} filter={props.filter} sortOrder={props.sortOrder} filter={props.filter} setSortOrder={applySorting} />
+                            <SortAndSearch
+                                // search={() => { props.getData(masterCategory, subCategory, props.pageNumber, props.sortOrder) }}
+                                setFilter={props.setFilter} filter={props.filter} sortOrder={props.sortOrder} filter={props.filter} setSortOrder={applySorting} />
                         </Grid>
                     </div>
                     <div className="col-9" style={{ paddingLeft: "0", paddingRight: "0" }}>

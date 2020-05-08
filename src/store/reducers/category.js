@@ -7,12 +7,12 @@ const initialState = {
     subCategory: "",
     data: {},
     filter: {
-        genres: [28],
-        certifiactes: [6, 9],
-        searchAll: false,
+        genres: [],
+        certifiactes: [],
+        searchAll: true,
         primary_release_date_lt: new Date().toISOString().slice(0, 10),
         primary_release_date_gt: new Date().toISOString().slice(0, 10),
-        language: "ka",
+        language: "",
         userScore: [0, 10],
         minUserVotes: [0],
         runTime: [0, 360]
