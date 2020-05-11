@@ -2,3 +2,12 @@
 margin-left: 20px;
 margin-right: 20px;
 }
+
+.MuiTypography-noWrap {
+    margin-right: 50px !important;
+}
+
+a:hover {
+     color:inherit !important;
+    text-decoration: none !important;
+}

@@ -6,7 +6,9 @@ import CategoryPanel from "../../component/categoryPanel/CategoryPanel"
 import SortAndSearch from "../../component/sortAndSearch/SortAndSearch"
 import { _handleScroll, disableWindowsScroll } from "../../utility/utility"
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from "@material-ui/core"
+import { makeStyles, Fab } from "@material-ui/core"
+import NavigationIcon from '@material-ui/icons/Navigation';
+import staticMenu from "../../component/header/staticMenu"
 
 const useStyles = makeStyles({
     root: {
@@ -18,11 +20,23 @@ const Category = (props) => {
     const classes = useStyles();
     const masterCategory = props.match.params.masterCategory || "Movies"
     const subCategory = props.match.params.subcategory || "popular"
-
     useEffect(() => {
         props.getData(masterCategory, subCategory, props.pageNumber, props.sortOrder)
     }, [props.sortOrder, props.filter, props.pageNumber])
 
+    useEffect(() => {
+        let constFilterData;
+        staticMenu.forEach(currentMenu => {
+            if (currentMenu.menuKey.toLowerCase() === masterCategory.toLowerCase()) {
+                currentMenu.menuOptions.forEach(currentOption => {
+                    if (currentOption.title.toLowerCase() === subCategory.toLowerCase()) {
+                        constFilterData = currentOption.data
+                    }
+                })
+            }
+        })
+        props.setFilter({ ...constFilterData });
+    }, [])
     const onCategoryScroll = (ev) => {
         _handleScroll(ev, () => {
             props.setPageNumber(props.pageNumber + 1)
@@ -61,6 +75,17 @@ const Category = (props) => {
                     </div>
                 </Grid>
             </div>
+            <Fab
+                variant="extended"
+                size="small"
+                color="primary"
+                aria-label="add"
+                style={{ position: "fixed", right: "0", bottom: "80px" }}
+                onClick={() => { window.scrollTo(0, 0); }}
+            >
+                <NavigationIcon className={classes.extendedIcon} />
+          Go To Top
+        </Fab>
         </Fragment >
     )
 }

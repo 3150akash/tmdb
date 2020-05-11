@@ -65,7 +65,7 @@ export const fetchCategoryData = (mastercategory, subCategory, pageNumber, sortO
             `&vote_count.gte=${state.category.filter.userScore[0]}` +
             `&with_runtime.gte=${state.category.filter.runTime[0]}` +
             `&with_runtime.lte=${state.category.filter.runTime[1]}` +
-            `&include_video=false & page=${pageNumber || 1} `;
+            `&include_video=false&page=${pageNumber || 1} `;
         // url = url.replace(/%20/g, "");
         dispatch(getCategoryDataStart())
         axios.get(url.replace(/%20/g, "")).then(response => {
