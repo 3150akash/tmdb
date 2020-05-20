@@ -70,7 +70,7 @@ const Category = (props) => {
                     </div>
                     <div className="col-9" style={{ paddingLeft: "0", paddingRight: "0" }}>
                         <Grid justify={'space-between'} container>
-                            <CategoryPanel data={props.categoryData} />
+                            <CategoryPanel type={masterCategory.toLowerCase()} data={props.categoryData} />
                         </Grid>
                     </div>
                 </Grid>

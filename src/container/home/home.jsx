@@ -24,7 +24,7 @@ class Home extends React.PureComponent {
                             return (
                                 <Box key={currentGalleryKey} id={currentGalleryKey}>
                                     <Tabs title={currentGallerObject.title} masterCategory={currentGalleryKey} selectedCategory={currentGallerObject.selectedCategory} tabItems={currentGallerObject.categories}></Tabs>
-                                    <Gallery galleryData={currentGallerObject[currentGallerObject.selectedCategory].results}></Gallery>
+                                    <Gallery type={currentGallerObject.selectedCategory} galleryData={currentGallerObject[currentGallerObject.selectedCategory].results}></Gallery>
                                 </Box>
                             )
                         }

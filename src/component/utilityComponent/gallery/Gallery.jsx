@@ -12,9 +12,9 @@ class Gallery extends React.PureComponent {
                     {
                         (this.props.galleryData) ? this.props.galleryData.map(currentItem => {
                             return (
-                                <Moviecard currentItem={currentItem} />
+                                <Moviecard type={this.props.type} size="2" currentItem={currentItem} />
                             )
-                        }) : <CircularProgress style={{position:"absolute", left:"45%"}} color="primary" />
+                        }) : <CircularProgress style={{ position: "absolute", left: "45%" }} color="primary" />
                     }
                 </div>
             </div>

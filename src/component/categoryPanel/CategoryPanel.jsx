@@ -5,11 +5,11 @@ import styles from "./categorypanel.module.css"
 // import { Spinner } from "reactstrap"
 import Grid from '@material-ui/core/Grid';
 import MovieCard from "../utilityComponent/movieCard/MovieCard"
-const CategoryPanel = ({ data }) => {
+const CategoryPanel = ({ data, type }) => {
     return (
         (data && data.length > 0)
             ? data.map(currentItem => {
-                return <MovieCard key={currentItem.id} size="large" currentItem={currentItem} />
+                return <MovieCard key={currentItem.id} size="3" type={type} currentItem={currentItem} />
             })
             : <Backdrop className={styles.backdrop} open={true}>
                 <CircularProgress color="inherit" />
