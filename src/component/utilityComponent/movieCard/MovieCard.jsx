@@ -28,18 +28,18 @@ const Moviecard = ({ currentItem, type, size }) => {
     return (
         <div style={{ borderRadius: ".8rem" }} className={`col-${size} p-0 border `}>
             <Link to={`/${type}/${currentItem.id}`}>
-                < CardActionArea style={{background:"white", borderRadius: ".8rem" }} >
+                < CardActionArea style={{ background: "white", borderRadius: ".8rem" }} >
                     <CardMedia
                         className={classes.media}
                         image={`https://image.tmdb.org/t/p/w220_and_h330_face${currentItem.poster_path ? currentItem.poster_path : currentItem.profile_path}`}
                         title={cardTitle}
                     />
-                    <CircularProgress
+                    {type.toLowerCase() !== "person" && <CircularProgress
                         color={currentItem.vote_average > 5 ? "primary" : "secondary"}
                         style={{ position: "absolute", top: "275px", left: "10px", backgroundColor: "black", borderRadius: "50%" }}
                         variant="static"
                         value={Math.trunc(currentItem.vote_average * 10)}
-                    />
+                    />}
                     <label style={{ position: "absolute", top: "286px", color: "white", left: "20px", fontSize: "small" }}>
                         {Math.trunc(currentItem.vote_average * 10)}
                         <sup>%</sup>

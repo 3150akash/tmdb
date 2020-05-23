@@ -3,7 +3,8 @@ import { updateobject } from "../../utility/utility"
 const initialState = {
     data: {},
     requestFailed: false,
-    requestStart: true
+    requestStart: true,
+    objectCredit: {}
 }
 
 const reducer = (state = initialState, action) => {
@@ -14,6 +15,8 @@ const reducer = (state = initialState, action) => {
             return updateobject(state, { requestFailed: true, requestStart: false })
         case actionType.GET_OBJECT_DETAIL_START:
             return updateobject(state, { requestFailed: false, requestStart: true })
+        case actionType.GET_OBJECT_CREDIT:
+            return updateobject(state, { objectCredit: action.payload, })
         default:
             return state
     }

@@ -19,6 +19,13 @@ const fetchingDetailSuccess = (data) => {
     }
 }
 
+const fetchingCreditSuccess = (data) => {
+    return {
+        type: actionTypes.GET_OBJECT_CREDIT,
+        payload: data
+    }
+}
+
 export const fetchObjectDetail = (objectType, objectId) => {
     return (dispatch) => {
         dispatch(fetchingDetailStart());
@@ -26,6 +33,16 @@ export const fetchObjectDetail = (objectType, objectId) => {
             dispatch(fetchingDetailSuccess(response.data))
         }).catch(err => {
             dispatch(fetchingDetailFailed())
+        })
+    }
+}
+
+export const fetchCredit = (objectType, objectId) => {
+    return (dispatch) => {
+        axios.get(`${objectType}/${objectId}/credits?api_key=${process.env.REACT_APP_API_ID}`).then(response => {
+            dispatch(fetchingCreditSuccess(response.data))
+        }).catch(err => {
+
         })
     }
 }

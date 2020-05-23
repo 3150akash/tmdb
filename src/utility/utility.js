@@ -25,7 +25,7 @@ export const _handleScroll = (ev, callBack) => {
     }
 }
 
-export const  getUrlParameter = (name) => {
+export const getUrlParameter = (name) => {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
     var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
     var results = regex.exec(window.location.search);
@@ -35,6 +35,12 @@ export const  getUrlParameter = (name) => {
 export const disableWindowsScroll = (listner) => {
     window.removeEventListener("scroll", listner)
     console.log('******************* UNMOUNTED');
+}
+
+export const time_convert_To_Hour_And_Minute = (num) => {
+    const hours = Math.floor(num / 60);
+    const minutes = num % 60;
+    return `${hours}h ${minutes}m`;
 }
 
 

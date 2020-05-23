@@ -31,7 +31,7 @@ export const fetchData = (masterCategory, infoType) => {
         if (state.home[masterCategory][infoType].results) {
             dispatch(getDataSuccess({}, masterCategory, infoType))
         } else {
-            let url = stringTemplateParser(state.home[masterCategory].url, { infoType: infoType.split('s')[0]})
+            let url = stringTemplateParser(state.home[masterCategory].url, { infoType: infoType})
             axios.get(url).then(result => {
                 let dummyObject = {}
                 dummyObject[infoType] = result.data
