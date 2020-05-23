@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useMemo } from "react"
 import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import styles from "./categorypanel.module.css"
@@ -15,4 +15,4 @@ const CategoryPanel = ({ data, type }) => {
     )
 }
 
-export default CategoryPanel
+export default React.memo(CategoryPanel)

@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function PrimarySearchAppBar() {
+const PrimarySearchAppBar = () => {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -243,3 +243,4 @@ export default function PrimarySearchAppBar() {
         </div>
     );
 }
+export default React.memo(PrimarySearchAppBar)

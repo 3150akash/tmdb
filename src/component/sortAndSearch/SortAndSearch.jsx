@@ -195,4 +195,4 @@ const SortAndSearch = (props) => {
     )
 }
 
-export default SortAndSearch
+export default React.memo(SortAndSearch)

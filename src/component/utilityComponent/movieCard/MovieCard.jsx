@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 // import {
 //     Card, CardImg, CardText, CardBody,
 //     CardTitle, CardSubtitle, Button, Spinner
@@ -22,11 +23,20 @@ const useStyles = makeStyles({
     },
 });
 
-const Moviecard = ({ currentItem, type, size }) => {
+
+const setBackground = (backgroundURL, ref) => {
+    //  alert(ref.current)
+    ref.current.style.backgroundImage = "url(" + `https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${backgroundURL}` + ")"
+}
+
+const Moviecard = ({ currentItem, type, size, parent }) => {
     const cardTitle = currentItem.title ? currentItem.title : currentItem.name;
     const classes = useStyles();
+    useEffect(() => {
+        setBackground(currentItem.backdrop_path, parent)
+    }, [])
     return (
-        <div style={{ borderRadius: ".8rem" }} className={`col-${size} p-0 border `}>
+        <div onMouseOver={() => setBackground(currentItem.backdrop_path, parent)} style={{ borderRadius: ".8rem" }} className={`col-${size} p-0 border `}>
             <Link to={`/${type}/${currentItem.id}`}>
                 < CardActionArea style={{ background: "white", borderRadius: ".8rem" }} >
                     <CardMedia
@@ -57,4 +67,4 @@ const Moviecard = ({ currentItem, type, size }) => {
         </div >
     )
 }
-export default Moviecard
+export default React.memo(Moviecard)

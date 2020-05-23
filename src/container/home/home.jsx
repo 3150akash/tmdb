@@ -1,44 +1,43 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useRef } from "react"
 import styles from "./home.module.css"
-import Tabs from "../../component/utilityComponent/tabs/Tabs";
-import Gallery from "../../component/utilityComponent/gallery/Gallery"
 import Box from '@material-ui/core/Box';
 import { connect } from "react-redux";
+import GalleryCollection from "../../component/utilityComponent/galleryCollection/GalleryCollection";
 
-class Home extends React.PureComponent {
-    render() {
-        return (
-            <Fragment>
-                <Box lg={12} id="brandPanel">
-                    <div className={styles.brandPanel + " row"}>
-                        <article className="col">
-                            <h1>welcome.</h1>
-                            <h2>Millions of movies, TV shows and people to discover. Explore now.</h2>
-                        </article>
-                    </div>
-                </Box>
-                {
-                    Object.keys(this.props.AllGallery).map(currentGalleryKey => {
-                        const currentGallerObject = this.props.AllGallery[currentGalleryKey]
-                        if (currentGallerObject) {
-                            return (
-                                <Box key={currentGalleryKey} id={currentGalleryKey}>
-                                    <Tabs title={currentGallerObject.title} masterCategory={currentGalleryKey} selectedCategory={currentGallerObject.selectedCategory} tabItems={currentGallerObject.categories}></Tabs>
-                                    <Gallery type={currentGallerObject.selectedCategory} galleryData={currentGallerObject[currentGallerObject.selectedCategory].results}></Gallery>
-                                </Box>
-                            )
-                        }
-                        else {
-                            return null
-                        }
-                    })
-                }
-                <section id="extraContaint">
+const Home = (props) => {
+    // const parent = useRef(null)
+    return (
+        <Fragment>
+            <Box lg={12} id="brandPanel">
+                <div className={styles.brandPanel + " row"}>
+                    <article className="col">
+                        <h1>welcome.</h1>
+                        <h2>Millions of movies, TV shows and people to discover. Explore now.</h2>
+                    </article>
+                </div>
+            </Box>
+            {
+                Object.keys(props.AllGallery).map(currentGalleryKey => {
+                    const currentGallerObject = props.AllGallery[currentGalleryKey]
+                    if (currentGallerObject) {
+                        return (
+                            <GalleryCollection currentGallerObject={currentGallerObject} currentGalleryKey={currentGalleryKey} />
+                            // <div ref={parent} key={currentGalleryKey} id={currentGalleryKey}>
+                            //     <Tabs title={currentGallerObject.title} masterCategory={currentGalleryKey} selectedCategory={currentGallerObject.selectedCategory} tabItems={currentGallerObject.categories}></Tabs>
+                            //     <Gallery parent={parent} type={currentGallerObject.selectedCategory} galleryData={currentGallerObject[currentGallerObject.selectedCategory].results}></Gallery>
+                            // </div>
+                        )
+                    }
+                    else {
+                        return null
+                    }
+                })
+            }
+            <section id="extraContaint">
 
-                </section>
-            </Fragment >
-        )
-    }
+            </section>
+        </Fragment >
+    )
 }
 const mapStateToProps = (state) => {
     return {

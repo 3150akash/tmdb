@@ -4,21 +4,19 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import styles from "./gallery.module.css"
 import Moviecard from "../movieCard/MovieCard";
 
-class Gallery extends React.PureComponent {
-    render() {
-        return (
-            <div className="mt-2 container-fluid" >
-                <div className={"row " + styles.gallery}>
-                    {
-                        (this.props.galleryData) ? this.props.galleryData.map(currentItem => {
-                            return (
-                                <Moviecard type={this.props.type} size="2" currentItem={currentItem} />
-                            )
-                        }) : <CircularProgress style={{ position: "absolute", left: "45%" }} color="primary" />
-                    }
-                </div>
+const Gallery = React.forwardRef((props, ref) => {
+    return (
+        <div className="mt-2 container-fluid" >
+            <div className={"row " + styles.gallery}>
+                {
+                    (props.galleryData) ? props.galleryData.map(currentItem => {
+                        return (
+                            <Moviecard parent={props.parent} type={props.type} size="2" currentItem={currentItem} />
+                        )
+                    }) : <CircularProgress style={{ position: "absolute", left: "45%" }} color="primary" />
+                }
             </div>
-        )
-    }
-}
+        </div>
+    )
+})
 export default Gallery

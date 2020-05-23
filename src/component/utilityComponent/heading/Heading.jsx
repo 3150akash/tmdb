@@ -22,4 +22,4 @@ const Heading = (props) => {
         <Paper elevation={3} className={classes.paper}>{`${props.masterCategory} ${props.subCategory}`}</Paper>
     )
 }
-export default Heading
+export default React.memo(Heading)

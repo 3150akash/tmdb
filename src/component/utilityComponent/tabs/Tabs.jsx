@@ -20,7 +20,7 @@ class Tabs extends React.Component {
             <div className="mt-2 container-fluid">
                 <div className="row">
                     <FormLabel className={styles.buttonTitle}>
-                        <h4>{this.props.title}</h4>
+                        <h4 style={{color:"white"}}>{this.props.title}</h4>
                     </FormLabel>
                     <ButtonGroup color="primary" aria-label="contained primary button group">
                         {
@@ -34,12 +34,6 @@ class Tabs extends React.Component {
         )
     }
 }
-
-// const mapStateToProps = (state) => {
-//     return {
-//         selectedCategory: state.home.selectedCategory
-//     }
-// }
 
 const mapDispatchToProps = (dispatch) => {
     return {

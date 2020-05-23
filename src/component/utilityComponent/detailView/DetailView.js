@@ -16,11 +16,11 @@ const DetailView = (props) => {
         <Box id="poster" style={style}>
             <Box style={{ backgroundImage: "linear-gradient(to right, rgba(20.39%, 16.08%, 19.22%, 1.00) 150px, rgba(25.88%, 24.71%, 25.49%, 0.84) 100%)" }}>
                 <div class="row">
-                    <div style={{ marginTop: "10px", marginLeft: "10px" }} className="col-2">
+                    <div style={{ marginTop: "10px", marginLeft: "5px" }} className="col-3">
                         {/* {`${objectID}----${objectType}`} */}
                         <Moviecard currentItem={props.objectDetails} type={props.type} size="12"></Moviecard>
                     </div>
-                    <div className="col-9" style={{ marginTop: "65px", marginBottom: "100px" }}>
+                    <div className="col-8" style={{ marginTop: "65px", marginBottom: "100px" }}>
                         <div>
                             <span style={{ fontSize: "xx-large" }}><b>{`${props.objectDetails.original_title}`}</b> ({new Date(props.objectDetails.release_date).getFullYear()})</span>
                             <p>
@@ -50,4 +50,4 @@ const DetailView = (props) => {
     )
 }
 
-export default DetailView
+export default React.memo(DetailView)
