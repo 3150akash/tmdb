@@ -26,15 +26,16 @@ const useStyles = makeStyles({
 
 const setBackground = (backgroundURL, ref) => {
     //  alert(ref.current)
-    ref.current.style.backgroundImage = "url(" + `https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${backgroundURL}` + ")"
+    if (ref)
+        ref.current.style.backgroundImage = "url(" + `https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${backgroundURL}` + ")"
 }
 
 const Moviecard = ({ currentItem, type, size, parent }) => {
     const cardTitle = currentItem.title ? currentItem.title : currentItem.name;
     const classes = useStyles();
-    useEffect(() => {
-        setBackground(currentItem.backdrop_path, parent)
-    }, [])
+    // useEffect(() => {
+    //     setBackground(currentItem.backdrop_path, parent)
+    // }, [])
     return (
         <div onMouseOver={() => setBackground(currentItem.backdrop_path, parent)} style={{ borderRadius: ".8rem" }} className={`col-${size} p-0 border `}>
             <Link to={`/${type}/${currentItem.id}`}>
@@ -44,16 +45,18 @@ const Moviecard = ({ currentItem, type, size, parent }) => {
                         image={`https://image.tmdb.org/t/p/w220_and_h330_face${currentItem.poster_path ? currentItem.poster_path : currentItem.profile_path}`}
                         title={cardTitle}
                     />
-                    {type.toLowerCase() !== "person" && <CircularProgress
+                    {type.toLowerCase() !== "person" && <><CircularProgress
                         color={currentItem.vote_average > 5 ? "primary" : "secondary"}
                         style={{ position: "absolute", top: "275px", left: "10px", backgroundColor: "black", borderRadius: "50%" }}
                         variant="static"
                         value={Math.trunc(currentItem.vote_average * 10)}
-                    />}
-                    <label style={{ position: "absolute", top: "286px", color: "white", left: "20px", fontSize: "small" }}>
-                        {Math.trunc(currentItem.vote_average * 10)}
-                        <sup>%</sup>
-                    </label>
+                    />
+                        <label style={{ position: "absolute", top: "286px", color: "white", left: "20px", fontSize: "small" }}>
+                            {Math.trunc(currentItem.vote_average * 10)}
+                            <sup>%</sup>
+                        </label> </>
+                    }
+
                     <CardContent>
                         <Typography gutterBottom variant="h6" component="h6" style={{ fontSize: "1rem", fontWeight: 600, lineHeight: 1 }}>
                             {cardTitle.length > 20 ? cardTitle.substring(0, 20) + "..." : cardTitle}
