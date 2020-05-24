@@ -10,16 +10,16 @@ import "./App.css"
 
 function App() {
   let maincontainer = (
-    <Provider store={store}>
-      <BrowserRouter>
-        <MainContaint />
-      </BrowserRouter>
-    </Provider>
+    <BrowserRouter>
+      <MainContaint />
+    </BrowserRouter>
   )
-  return <Layout
-    header={<Header></Header>}
-    mainContaint={maincontainer}
-    footer={<Footer></Footer>} />
+  return <Provider store={store}>
+    <Layout
+      header={<Header></Header>}
+      mainContaint={maincontainer}
+      footer={<Footer></Footer>} />
+  </Provider>
 }
 
 export default App;

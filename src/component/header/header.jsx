@@ -14,7 +14,9 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import MenuListComposition from '../utilityComponent/menu/Menu';
 import staticMenu from './staticMenu';
-import { Link } from '@material-ui/core';
+import { Link, Paper } from '@material-ui/core';
+import * as actions from "../../store/actions/"
+import { connect } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -80,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const PrimarySearchAppBar = () => {
+const PrimarySearchAppBar = (props) => {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -91,6 +93,20 @@ const PrimarySearchAppBar = () => {
     const handleProfileMenuOpen = (event) => {
         setAnchorEl(event.currentTarget);
     };
+    let queryString = "";
+    let timeOut;
+    const onSearchInputChange = (event) => {
+        if (event.target.value.length > 2 && queryString !== event.target.value) {
+            if (timeOut) {
+                clearTimeout(timeOut)
+            }
+            queryString = event.target.value;
+            timeOut = setTimeout(() => {
+                console.log(queryString)
+                props.executeSearch(queryString)
+            }, 1000)
+        }
+    }
 
     const handleMobileMenuClose = () => {
         setMobileMoreAnchorEl(null);
@@ -165,14 +181,6 @@ const PrimarySearchAppBar = () => {
     return (
         <div className={classes.grow}>
             <Toolbar>
-                {/* <IconButton
-                    edge="start"
-                    className={classes.menuButton}
-                    color="inherit"
-                    aria-label="open drawer"
-                >
-                    <MenuIcon />
-                </IconButton> */}
                 <Typography className={classes.title} variant="h6" noWrap>
                     <Link href="/" color="inherit"> TMDB</Link>
                 </Typography>
@@ -182,26 +190,30 @@ const PrimarySearchAppBar = () => {
                         return <MenuListComposition menuTitle={currentMenu.menuTitle} menuOptions={currentMenu.menuOptions} />
                     })
                 }
-
-                {/* <Typography className={classes.title} variant="h6" noWrap>
-                    Movies
-                </Typography>
-                <Typography className={classes.title} variant="h6" noWrap>
-                    TV Show
-                </Typography>
-                <MenuListComposition menuTitle="Movie" menuOptions={[{ title: "Popular", data: {} }, { title: "Popular", data: {} }, { title: "Popular", data: {} }]} /> */}
                 <div className={classes.search}>
                     <div className={classes.searchIcon}>
                         <SearchIcon />
                     </div>
                     <InputBase
                         placeholder="Search…"
+                        onChange={onSearchInputChange}
                         classes={{
                             root: classes.inputRoot,
                             input: classes.inputInput,
                         }}
                         inputProps={{ 'aria-label': 'search' }}
                     />
+                    {props.searchOutput.results && <Paper style={{ position: "absolute", width: "150%" }} elevation={3}>
+                        <ul style={{ listStyle: "none", paddingLeft: "0", marginBottom: "0px" }}>
+                            {props.searchOutput.results.slice(0, 10).map(currentOutput => {
+                                return (
+                                    <li style={{ borderBottom: "1px solid lightgrey", borderRadius: ".25em", paddingLeft: "5px" }}>
+                                        <div>{currentOutput.title ? currentOutput.title : currentOutput.name}</div>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </Paper>}
                 </div>
                 <div className={classes.grow} />
                 <div className={classes.sectionDesktop}>
@@ -243,4 +255,17 @@ const PrimarySearchAppBar = () => {
         </div>
     );
 }
-export default React.memo(PrimarySearchAppBar)
+
+const mapStateToProps = (state) => {
+    return {
+        searchOutput: state.search.searchOutput
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        executeSearch: (query) => { dispatch(actions.fetchSearchoutput(query)) }
+    }
+}
+
+export default React.memo(connect(mapStateToProps, mapDispatchToProps)(PrimarySearchAppBar))
