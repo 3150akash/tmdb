@@ -17,6 +17,8 @@ import staticMenu from './staticMenu';
 import { Link, Paper } from '@material-ui/core';
 import * as actions from "../../store/actions/"
 import { connect } from 'react-redux';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -93,19 +95,28 @@ const PrimarySearchAppBar = (props) => {
     const handleProfileMenuOpen = (event) => {
         setAnchorEl(event.currentTarget);
     };
-    let queryString = "";
+    let [queryString, setQuery] = useState("");
     let timeOut;
-    const onSearchInputChange = (event) => {
-        if (event.target.value.length > 2 && queryString !== event.target.value) {
+    useEffect(() => {
+        if (queryString.length > 2) {
             if (timeOut) {
                 clearTimeout(timeOut)
             }
-            queryString = event.target.value;
             timeOut = setTimeout(() => {
-                console.log(queryString)
                 props.executeSearch(queryString)
-            }, 1000)
+            }, 500)
         }
+        else {
+            props.executeSearch(String.emp)
+        }
+    }, [queryString])
+
+    const onSearchInputChange = (event) => {
+        setQuery(event.target.value)
+    }
+
+    const onSearchFocusOut = () => {
+        setQuery("")
     }
 
     const handleMobileMenuClose = () => {
@@ -196,14 +207,16 @@ const PrimarySearchAppBar = (props) => {
                     </div>
                     <InputBase
                         placeholder="Search…"
+                        value={queryString}
                         onChange={onSearchInputChange}
+                        onBlur={onSearchFocusOut}
                         classes={{
                             root: classes.inputRoot,
                             input: classes.inputInput,
                         }}
                         inputProps={{ 'aria-label': 'search' }}
                     />
-                    {props.searchOutput.results && <Paper style={{ position: "absolute", width: "150%" }} elevation={3}>
+                    {queryString.length > 2 && props.searchOutput.results && <Paper style={{ position: "absolute", width: "150%" }} elevation={3}>
                         <ul style={{ listStyle: "none", paddingLeft: "0", marginBottom: "0px" }}>
                             {props.searchOutput.results.slice(0, 10).map(currentOutput => {
                                 return (
@@ -264,7 +277,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        executeSearch: (query) => { dispatch(actions.fetchSearchoutput(query)) }
+        executeSearch: (query) => { dispatch(actions.fetchSearchoutput(query, false)) }
     }
 }
 
